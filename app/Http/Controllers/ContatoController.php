@@ -27,5 +27,6 @@ class ContatoController extends Controller
         // redirecionamento de volta para a página de contato
         // com uma mensagem de sucesso
         return redirect()->route('contact')->with('sucesso', 'Sua mensagem foi enviada!');
+
     }
 }
