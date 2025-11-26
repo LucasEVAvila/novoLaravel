@@ -12,14 +12,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
-<<<<<<< HEAD
-=======
 // adicionando a importação de e-mail 
 use Illuminate\Support\Facades\Mail; 
 use App\Mail\WelcomeEmail;
 use Illuminate\Support\Facades\Log;
 
->>>>>>> 1033cc00b0f653bc28941259b58825fd80cf1283
 class RegisteredUserController extends Controller
 {
     /**
@@ -51,11 +48,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-<<<<<<< HEAD
-        Auth::login($user);
-
-        return redirect(route('dashboard', absolute: false));
-=======
         //adicionar a lógica de try catch
         try {
             Mail::to($user->email)->send(new WelcomeEmail($user->name));
@@ -67,6 +59,5 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(route('admin.dashboard'));
->>>>>>> 1033cc00b0f653bc28941259b58825fd80cf1283
     }
 }

@@ -1,16 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PrincipalController;
-use App\Http\Controllers\SobreNosController;
-use App\Http\Controllers\ContatoController;
-use App\Http\Controllers\DashboardController;
 
-
-// 1. Rotas Públicas 
-=======
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
@@ -25,11 +15,7 @@ Route::get('/sobre-nos', [SobreNosController::class, 'aboutUs'])->name('about');
 Route::get('/contato', [ContatoController::class, 'contact'])->name('contact');
 Route::post('/contato', [ContatoController::class, 'salvar'])->name('contact.salvar');
 
-<<<<<<< HEAD
-// 2. Rotas Protegidas 
-Route::middleware(['auth', 'verified'])->group(function () {
-    
-=======
+
 // 2. Rotas Protegidas (Dashboard Antiga Adaptada e Rotas do Profile)
 Route::middleware(['auth', 'verified'])->group(function () {
     // Sua Dashboard, agora protegida e no caminho /admin/dashboard
@@ -41,14 +27,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
-<<<<<<< HEAD
-  
-   
-});
-
-// 3. Rotas de Autenticação do Breeze (Login, Register, etc.)
-require __DIR__.'/auth.php';troy'])->name('profile.destroy');
-=======
     // Se quiser manter o /dashboard antigo, mas redirecionando:
     Route::get('/dashboard', function () {
         return redirect()->route('admin.dashboard');
@@ -57,4 +35,3 @@ require __DIR__.'/auth.php';troy'])->name('profile.destroy');
 
 // 3. Rotas de Autenticação do Breeze (Login, Register, etc.)
 require __DIR__.'/auth.php';
->>>>>>> 1033cc00b0f653bc28941259b58825fd80cf1283
